@@ -2,22 +2,30 @@
     padding: 0%;
     margin: 0%;
 }
+
 .nav{
+    background-color: rgb(0, 0, 76);
     display: flex;
-    /* background-color: rgb(0, 0, 72); */
-    background-color: red;
-    justify-content: center;
-    
-    
+    align-items: center;
 }
-.icon{
-    width: 5%;
-    position: relative;
-    
+.title_div{
+   position: absolute;
 }
 .title{
-    position: absolute;
-    /* margin-left: 50%; */
-    color: white;
-    font-size: 50px;
+    font-size: 3rem;
+    color: whitesmoke;
 }
+
+.icon{
+    width: 60px;
+}
+.icon_div{
+    margin-left: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-color: black;
+} 
