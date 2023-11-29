@@ -35,7 +35,7 @@ body{
     max-width: 80%;
     margin: auto;
     height: 60vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .message{
     font-size: 20px;
