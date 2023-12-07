@@ -1,10 +1,13 @@
 //nodeserver to handel socket io connection
+console.log("connected index.js");
 
-const { Socket } = require("socket.io")
+const { Socket, Server } = require("socket.io");
+// import { Server } from "socket.io";
 
-const io= require("socket.io")(8080)
+const io= require("socket.io")(8000)
+// const io = new Server(3000);
 
-const users={}
+const users={};
 
 io.on('connection',socket=>{
     socket.on("new-user-join",name=>{
