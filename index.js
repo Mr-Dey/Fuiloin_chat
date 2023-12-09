@@ -10,11 +10,6 @@ app.get("/socket",(req,res)=>{
   res.sendFile(__dirname+"/node_modules/socket.io/client-dist/socket.io.js");
 })
 
-//server
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
 
 //Properities
 const users={};
@@ -24,14 +19,18 @@ io.on("connection",(socket)=>{
     socket.on("new-user-joined",name=>{
       console.log(name+" has joined the chat!");
       users[socket.id]=name;
-      console.log(users);
       socket.broadcast.emit("user-joined",name);
     })
 
-})
-
-
-
-
-
+  })
+  
+  
+  
+  
+  
+  //server
+  const PORT = process.env.PORT || 3000;
+  server.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
 
