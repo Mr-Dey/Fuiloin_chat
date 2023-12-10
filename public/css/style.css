@@ -5,7 +5,11 @@
     padding: 0%;
     margin: 0%;
     font-family:"Source Sans 3";
-    /* transition: all 0.5s ease; */
+    transition: all 0.5s ease;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .nav{
@@ -56,7 +60,7 @@ body{
     background-color: whitesmoke;
     max-width: 85%;
     margin: auto;
-    height: 85vh;
+    height: 81vh;
 
     overflow-y: auto;
 }

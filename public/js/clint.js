@@ -8,7 +8,9 @@ socket.emit("new-user-joined",Name);
 
 //html properties
 const messageContainer=document.querySelector(".container");
-
+const sendButton=document.querySelector(".button");
+const messageInput=document.querySelector("#messageInp");
+const form=document.querySelector(".inputform");
 
 const appendMessage=(message,position)=>{
     const childDiv=document.createElement("div");
@@ -18,10 +20,26 @@ const appendMessage=(message,position)=>{
     messageContainer.append(childDiv);
 }
 
-appendMessage("may","right");
+//prevent form default-Behaviour
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+})
 
-
+const submitBtn=()=>{
+    let message=messageInput.value;
+    if(message.trim().length>0){
+        appendMessage(message,"right");
+        socket.emit("send-message",message);
+        messageInput.value="";
+        messageContainer.scrollTop=messageContainer.scrollHeight;
+    }
+}
 
 socket.on("user-joined",Name=>{
     console.log("New user joined "+Name);
+    appendMessage(`user name ${Name} joined the chat.`,"left");
+})
+
+socket.on("receved-message",(message)=>{
+    appendMessage(message,"left");
 })

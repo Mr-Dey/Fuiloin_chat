@@ -4,6 +4,7 @@ const app=express();
 const server = http.createServer(app);
 const socketIO = require("socket.io");
 const io=socketIO(server);
+
 //very importent because only this folder will be public so index.html should be inside this folder along with requirements.
 app.use(express.static('public'));
 app.get("/socket",(req,res)=>{
@@ -21,10 +22,11 @@ io.on("connection",(socket)=>{
       users[socket.id]=name;
       socket.broadcast.emit("user-joined",name);
     })
-
+    socket.on("send-message",(message)=>{
+      socket.broadcast.emit("receved-message",message);
+    })
   })
-  
-  
+
 
   //server
   const PORT = process.env.PORT || 3000;
