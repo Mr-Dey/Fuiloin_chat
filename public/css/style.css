@@ -5,11 +5,16 @@
     padding: 0%;
     margin: 0%;
     font-family:"Source Sans 3";
-    transition: all 0.5s ease;
+    transition:all .2s ease;
 }
 
 html{
     scroll-behavior: smooth;
+}
+
+body{
+    background: url("../requirements/bg/lt_bg1.jpg");
+    background-size: 30vh;
 }
 
 /* navbar */
@@ -67,7 +72,10 @@ body{
 }
 
 .container{
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.514);
+    backdrop-filter:blur(1vh);
+    border-left: .4vh solid rgba(0, 0, 0, 0.26);
+    border-right: .4vh solid rgba(0, 0, 0, 0.26);
     max-width: 90%;
     margin: auto;
     height: 80vh;
@@ -130,6 +138,7 @@ body{
 }
 
 .button{
+    border: .3vh solid rgba(0, 0, 0, 0.466);
     display: flex;
     height: 7vh;
     width: 7vh;
@@ -138,11 +147,28 @@ body{
     border-radius: 5vh;
 }
 
+.material-symbols-outlined {
+    font-size: 3.5vh !important;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+.material-symbols-outlined {
+    font-size: 4.5vh !important;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
 
-.button:hover{
+
+/* .button:hover{
     background-color: rgb(0, 175, 0);
     color: white;
-}
+} */
 
 
 /* @media only screen and (max-width:768px){
