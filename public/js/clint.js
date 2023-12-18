@@ -12,6 +12,12 @@ const sendButton=document.querySelector(".button");
 const messageInput=document.querySelector("#messageInp");
 const form=document.querySelector(".inputform");
 
+
+//buttonClicked
+// sendButton.addEventListener('click',()=>{
+//     sendButton.addClassList
+// })
+
 const appendMessage=(message,position)=>{
     const childDiv=document.createElement("div");
     childDiv.innerText=message;
