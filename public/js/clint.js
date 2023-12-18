@@ -29,7 +29,7 @@ const submitBtn=()=>{
     let message=messageInput.value;
     if(message.trim().length>0){
         appendMessage(message,"right");
-        socket.emit("send-message",message);
+        socket.emit("send-message",message,Name);
         messageInput.value="";
         messageContainer.scrollTop=messageContainer.scrollHeight;
     }
@@ -40,6 +40,6 @@ socket.on("user-joined",Name=>{
     appendMessage(`user name ${Name} joined the chat.`,"left");
 })
 
-socket.on("receved-message",(message)=>{
-    appendMessage(message,"left");
+socket.on("receved-message",(message,name)=>{
+    appendMessage(`${name} : ${message}`,"left");
 })
