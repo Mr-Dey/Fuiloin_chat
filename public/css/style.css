@@ -217,7 +217,7 @@ body{
         border-left: .2vh solid rgba(0, 0, 0, 0.26);
         border-right: .2vh solid rgba(0, 0, 0, 0.26);
         max-width: 95%;
-        height: 84.5vh;
+        height: 82.5vh;
     }
     .message{
         font-size: 2vh;
@@ -231,7 +231,7 @@ body{
 
     /* sendbar */
     .send{
-        height: 8vh;
+        height: 10vh;
         
     }
 
@@ -247,8 +247,8 @@ body{
         outline: none;
         margin: .5vh 2vh;
         width: 60%;
-        height: 4vh;
-        padding: 1vh;
+        height: 5vh;
+        padding: 1vh 2vh;
         font-size: 2vh;
         border: .2vh solid rgba(0, 0, 0, 0.293);
         border-radius: 3vh;
