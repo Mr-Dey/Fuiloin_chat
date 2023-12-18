@@ -217,7 +217,7 @@ body{
         border-left: .2vh solid rgba(0, 0, 0, 0.26);
         border-right: .2vh solid rgba(0, 0, 0, 0.26);
         max-width: 95%;
-        height: 82.5vh;
+        height: 83.5vh;
     }
     .message{
         font-size: 2vh;
@@ -231,16 +231,14 @@ body{
 
     /* sendbar */
     .send{
-        height: 10vh;
-        
+        width: 100%;
     }
 
     .inputform{
         display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
         height: 9vh;
+        margin-bottom: 1vh;
     }
 
     #messageInp{
