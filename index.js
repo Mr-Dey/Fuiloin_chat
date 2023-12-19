@@ -16,7 +16,8 @@ app.get("/socket",(req,res)=>{
 const users={};
 
 //messagesStoreHere
-const StoreMessages=[];
+let MessageCount=0;
+const StoreMessages={};
 
 //io logic
 io.on("connection",(socket)=>{
@@ -29,10 +30,14 @@ io.on("connection",(socket)=>{
     })
     //Receved-And-sendMessage
     socket.on("send-message",(message)=>{
-      StoreMessages.push(`${users[socket.id]} : ${message}`);
+      StoreMessages[MessageCount]={
+        name:users[socket.id],
+        message:message
+      }
+      MessageCount++;
       socket.broadcast.emit("receved-message",{
-        message:message,
-        name:users[socket.id]//the name will be taken from dictionary
+        name:users[socket.id],
+        message:message
       });
     })
   })
