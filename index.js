@@ -15,15 +15,25 @@ app.get("/socket",(req,res)=>{
 //Properities
 const users={};
 
+//messagesStoreHere
+const StoreMessages=[];
+
 //io logic
 io.on("connection",(socket)=>{
-    socket.on("new-user-joined",name=>{
+  //userJoined
+    socket.on("new-user-joined",(name)=>{
       console.log(name+" has joined the chat!");
       users[socket.id]=name;
+      socket.emit("load-messages",StoreMessages);
       socket.broadcast.emit("user-joined",name);
     })
-    socket.on("send-message",(message,name)=>{
-      socket.broadcast.emit("receved-message",message,name);
+    //Receved-And-sendMessage
+    socket.on("send-message",(message)=>{
+      StoreMessages.push(`${users[socket.id]} : ${message}`);
+      socket.broadcast.emit("receved-message",{
+        message:message,
+        name:users[socket.id]//the name will be taken from dictionary
+      });
     })
   })
 

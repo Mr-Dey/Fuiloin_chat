@@ -4,6 +4,8 @@ console.log("live");
 
 //prompt
 const Name=prompt("What is your name?");
+
+//OnNewUserJoined
 socket.emit("new-user-joined",Name);
 
 //html properties
@@ -31,21 +33,30 @@ form.addEventListener("submit",(e)=>{
     e.preventDefault();
 })
 
+//User joined
+socket.on("user-joined",(Name)=>{
+    console.log("New user joined "+Name);
+    appendMessage(`User : ${Name} has joined the chat.`,"left");
+})
+
+//LoadOldMessages
+socket.on("load-messages",(data)=>{
+    data.forEach((e)=>{
+        appendMessage(e,"left");
+    })
+})
+//send message
 const submitBtn=()=>{
     let message=messageInput.value;
     if(message.trim().length>0){
-        appendMessage(message,"right");
-        socket.emit("send-message",message,Name);
+        appendMessage(`${Name} : ${message}`,"right");
+        socket.emit("send-message",message);
         messageInput.value="";
         messageContainer.scrollTop=messageContainer.scrollHeight;
     }
 }
 
-socket.on("user-joined",Name=>{
-    console.log("New user joined "+Name);
-    appendMessage(`user name ${Name} joined the chat.`,"left");
-})
-
-socket.on("receved-message",(message,name)=>{
-    appendMessage(`${name} : ${message}`,"left");
+//receive message
+socket.on("receved-message",data=>{
+    appendMessage(`${data.name} : ${data.message}`,"left");
 })

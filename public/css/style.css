@@ -72,13 +72,14 @@ body{
 }
 
 .container{
+    padding: 1vh;
     background-color: rgba(245, 245, 245, 0.514);
     backdrop-filter:blur(1vh);
     border-left: .4vh solid rgba(0, 0, 0, 0.26);
     border-right: .4vh solid rgba(0, 0, 0, 0.26);
     max-width: 90%;
     margin: auto;
-    height: 80vh;
+    height: 78.1vh;
     overflow-y: auto;
 }
 .message{
@@ -245,7 +246,7 @@ body{
         outline: none;
         margin: .5vh 2vh;
         width: 60%;
-        height: 5vh;
+        height: 3vh;
         padding: 1vh 2vh;
         font-size: 2vh;
         border: .2vh solid rgba(0, 0, 0, 0.293);
@@ -257,5 +258,8 @@ body{
         width: 6vh;
         border: .2vh solid rgba(0, 0, 0, 0.466);
         border-radius: 5vh;
-    }   
+    }
+    .material-symbols-outlined{
+        font-size: 3vh !important;
+    }
 }
