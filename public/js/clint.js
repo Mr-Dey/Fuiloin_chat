@@ -1,5 +1,6 @@
 //io from socket server
 const socket = io("http://127.0.0.1:3000");
+// const socket = io("http://192.168.1.41:3000");
 console.log("live");
 
 //prompt
@@ -59,4 +60,5 @@ const submitBtn=()=>{
 //receive message
 socket.on("receved-message",data=>{
     appendMessage(`${data.name} : ${data.message}`,"left");
+    messageContainer.scrollTop=messageContainer.scrollHeight;
 })

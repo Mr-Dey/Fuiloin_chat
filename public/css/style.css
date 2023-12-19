@@ -180,6 +180,7 @@ body{
     }
     /* navbar */
     .nav{
+        height: 10vh;
         padding: 0vh 1vh;       
     }
 
@@ -214,12 +215,14 @@ body{
     /* container */
     .container{
         padding: 0.5vh;
+        padding-bottom: 10vh;
         background-color: rgba(245, 245, 245, 0.514);
         backdrop-filter:blur(2vh);
         border-left: .2vh solid rgba(0, 0, 0, 0.26);
         border-right: .2vh solid rgba(0, 0, 0, 0.26);
         max-width: 92%;
-        height: 82.5vh;
+        height: 72vh;
+        max-height: 80vh;
     }
     .message{
         font-size: 2vh;
@@ -233,6 +236,7 @@ body{
 
     /* sendbar */
     .send{
+        height: 10vh;
         width: 100%;
     }
 
