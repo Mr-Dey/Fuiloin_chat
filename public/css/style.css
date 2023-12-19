@@ -85,7 +85,7 @@ body{
 .message{
     font-size: 2vh;
     background-color: rgb(175, 175, 175);
-    max-width: 40%;
+    max-width: 50%;
     margin: .5vh 3vh;
     padding:1vh 2vh;
     border:.3vh solid rgba(0, 0, 0, 0.38);
@@ -213,12 +213,13 @@ body{
 
     /* container */
     .container{
+        padding: 0.5vh;
         background-color: rgba(245, 245, 245, 0.514);
         backdrop-filter:blur(2vh);
         border-left: .2vh solid rgba(0, 0, 0, 0.26);
         border-right: .2vh solid rgba(0, 0, 0, 0.26);
-        max-width: 95%;
-        height: 83.5vh;
+        max-width: 92%;
+        height: 82.5vh;
     }
     .message{
         font-size: 2vh;
