@@ -1,6 +1,5 @@
 //io from socket server
-const socket = io("http://127.0.0.1:3000");
-// const socket = io("http://192.168.1.41:3000");
+const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
 console.log("live");
 
 //prompt
