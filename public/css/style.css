@@ -71,6 +71,22 @@ body{
     background-color: white;
 }
 
+
+
+.custom-shape-divider-top-1703042650 {
+    margin-top: 10.5vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+
+
+
+
 .container{
     padding: 1vh;
     background-color: rgba(245, 245, 245, 0.514);
@@ -103,6 +119,18 @@ body{
     clear: both;
     color: white;
     background-color: cadetblue;
+}
+
+.username{
+    text-decoration: underline;
+    font-size: 2vh;
+}
+
+.name-left{
+    color: cadetblue;
+}
+.name-right{
+    color:black;
 }
 
 .send{
@@ -166,12 +194,19 @@ body{
     'FILL' 1,
 }
 
+.color1{
+    background-color:black;
+}
+.color2{
+    background-color:rgba(245, 245, 245, 0.776);
+}
 
-/* .button:hover{
-    background-color: rgb(0, 175, 0);
-    color: white;
-} */
 
+
+
+
+
+/* mobileview */
 
 @media only screen and (max-width:768px){
     /* body */
