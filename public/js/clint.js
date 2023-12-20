@@ -4,10 +4,20 @@ const socket = io("http://192.168.1.41:3000");
 console.log("live");
 
 //prompt
-const Name=prompt("What is your name?");
+const prompt=document.querySelector(".entry-prompt");
+const nameInp=document.querySelector("#nameInp");
+const entryForm=document.querySelector(".entrypoint");
+const loginbtn=document.querySelector("#loginbtn");
 
-//OnNewUserJoined
-socket.emit("new-user-joined",Name);
+
+let Name="Default";
+entryForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    Name=nameInp.value;
+    prompt.style.display="none";
+    //OnNewUserJoined
+    socket.emit("new-user-joined",Name);
+})
 
 //html properties
 const messageContainer=document.querySelector(".container");
@@ -34,9 +44,14 @@ const form=document.querySelector(".inputform");
 
 const appendMessage=(username,message,position)=>{
     let UserNameDiv=document.createElement("div");
+    UserNameDiv.classList.add("username");
+    UserNameDiv.classList.add(`name-${position}`);
     UserNameDiv.innerText=username;
+
     let UserMessageDiv=document.createElement("div");
+    UserMessageDiv.classList.add("text");
     UserMessageDiv.innerText=message;
+
     let Message=document.createElement("div");
     Message.appendChild(UserNameDiv);
     Message.appendChild(UserMessageDiv);
@@ -53,7 +68,7 @@ form.addEventListener("submit",(e)=>{
 
 //User joined
 socket.on("user-joined",(Name)=>{
-    appendMessage(Name,`User : ${Name} has joined the chat.`,"left");
+    appendMessage(Name,`${Name} has joined the chat.`,"left");
 })
 
 //LoadOldMessages
