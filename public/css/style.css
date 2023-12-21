@@ -23,6 +23,7 @@ body{
     background-color: #00004c;
     display: flex;
     align-items: center;
+    overflow: hidden;
     
 }
 
@@ -71,6 +72,32 @@ body{
     background-color: white;
 }
 
+
+/* maybeinfuture */
+/* .wave {
+    margin-top: 10.5vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(121% + 1.3px);
+    height: 3vh;
+}
+
+.wave .shape-fill {
+    fill: #003470;
+} */
+
+
+
+
+
 .container{
     padding: 1vh;
     background-color: rgba(245, 245, 245, 0.514);
@@ -82,7 +109,10 @@ body{
     height: 78.1vh;
     overflow-y: auto;
 }
+
+
 .message{
+    opacity: 1;
     font-size: 2vh;
     background-color: rgb(175, 175, 175);
     max-width: 50%;
@@ -90,8 +120,9 @@ body{
     padding:1vh 2vh;
     border:.3vh solid rgba(0, 0, 0, 0.38);
     border-radius: 2.5vh;
-    text-align:justify;
 }
+
+
 
 .left{
     float: left;
@@ -103,6 +134,17 @@ body{
     clear: both;
     color: white;
     background-color: cadetblue;
+}
+
+.username{
+    font-size: 1.5vh;
+}
+
+.name-left{
+    color: cadetblue;
+}
+.name-right{
+    color:black;
 }
 
 .send{
@@ -127,7 +169,7 @@ body{
 
 
 
-#messageInp{
+.inputfeald{
     outline: none;
     margin: .5vh 2vh;
     width: 85%;
@@ -139,17 +181,28 @@ body{
 }
 
 .button{
-    border: .3vh solid rgba(0, 0, 0, 0.466);
+    color: black;
+    border: .2vh solid rgba(0, 0, 0, 0.466);
     display: flex;
     height: 7vh;
     width: 7vh;
     align-items: center;
     justify-content: center;
     border-radius: 5vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.button-clicked{
-    background-color: aquamarine;
-    color: whitesmoke;
+
+@media only screen and (min-width:768px){
+    .button:hover {
+        color: white;
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        transform: scale(1.1);
+    }
+}
+
+.button:active {
+    transform: scale(0.90);
 }
 
 .material-symbols-outlined {
@@ -166,17 +219,60 @@ body{
     'FILL' 1,
 }
 
+/* twotone */
+.color1{
+    background-color:#002652;
+}
+.color2{
+    background-color:rgba(245, 245, 245, 0.776);
+}
 
-/* .button:hover{
-    background-color: rgb(0, 175, 0);
-    color: white;
-} */
+
+.entry-prompt{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1.5vh);
+}
+.entrypoint{
+    color: rgba(0, 0, 0, 0.659);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+    background-color: rgba(127, 255, 212, 0.24);
+    backdrop-filter: blur(5vh);
+    padding: 2vh;
+    gap: 2vh;
+    width: 100%;
+    font-size: 6vh;
+}
+
+#nameInp{
+    width: 50%;
+    text-align: center;
+}
+
+/* mobileview */
+
+@media only screen and (max-width:768px) {
+
+    /* entryprompt */
+    .entrypoint{
+        font-size: 4vh;
+    }
 
 
-@media only screen and (max-width:768px){
     /* body */
     body{
-        background-size: 50vh;
+        background-size: 15vh;
     }
     /* navbar */
     .nav{
@@ -216,8 +312,8 @@ body{
     .container{
         padding: 0.5vh;
         padding-bottom: 10vh;
-        background-color: rgba(245, 245, 245, 0.514);
-        backdrop-filter:blur(2vh);
+        background-color: rgba(245, 245, 245, 0.747);
+        backdrop-filter:blur(.5vh);
         border-left: .2vh solid rgba(0, 0, 0, 0.26);
         border-right: .2vh solid rgba(0, 0, 0, 0.26);
         max-width: 92%;
@@ -247,7 +343,7 @@ body{
         margin-bottom: 1vh;
     }
 
-    #messageInp{
+    .inputfeald{
         outline: none;
         margin: .5vh 2vh;
         width: 60%;
@@ -263,6 +359,12 @@ body{
         width: 6vh;
         border: .2vh solid rgba(0, 0, 0, 0.466);
         border-radius: 5vh;
+    }
+
+    .button:active {
+        color: white;
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        transform: scale(0.90);
     }
     .material-symbols-outlined{
         font-size: 3vh !important;
