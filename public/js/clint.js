@@ -1,7 +1,13 @@
 //io from socket server
+<<<<<<< HEAD
 
 const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
 
+=======
+// const socket = io("http://127.0.0.1:3000");
+// const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
+const socket = io("http://192.168.1.41:3000");
+>>>>>>> beta
 console.log("live");
 
 //prompt
@@ -34,10 +40,39 @@ const appendMessage=(username,message,position)=>{
     UserNameDiv.classList.add(`name-${position}`);
     UserNameDiv.innerText=username;
 
+<<<<<<< HEAD
     let UserMessageDiv=document.createElement("div");
     UserMessageDiv.classList.add("text");
     UserMessageDiv.innerText=message;
 
+=======
+//Future Work
+//buttonClicked
+// sendButton.addEventListener('click',()=>{
+//     sendButton.addClassList
+// })
+
+
+//appendMessageToHtml(old)
+// const appendMessage=(message,position)=>{
+//     const childDiv=document.createElement("div");
+//     childDiv.innerText=message;
+//     childDiv.classList.add("message");
+//     childDiv.classList.add(position);
+//     messageContainer.append(childDiv);
+// }
+
+const appendMessage=(username,message,position)=>{
+    let UserNameDiv=document.createElement("div");
+    UserNameDiv.classList.add("username");
+    UserNameDiv.classList.add(`name-${position}`);
+    UserNameDiv.innerText=username;
+
+    let UserMessageDiv=document.createElement("div");
+    UserMessageDiv.classList.add("text");
+    UserMessageDiv.innerText=message;
+
+>>>>>>> beta
     let Message=document.createElement("div");
     Message.appendChild(UserNameDiv);
     Message.appendChild(UserMessageDiv);
@@ -81,3 +116,35 @@ socket.on("receved-message",data=>{
     messageContainer.scrollTop=messageContainer.scrollHeight;
 })
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+//del
+// const messageContainer=document.querySelector(".container");
+// const messageInput=document.querySelector("#messageInp");
+// const appendMessage=(username,message,position)=>{
+//     let UserNameDiv=document.createElement("div");
+//     UserNameDiv.innerText=username;
+//     let UserMessageDiv=document.createElement("div");
+//     UserMessageDiv.innerText=message;
+//     let Message=document.createElement("div");
+//     Message.appendChild(UserNameDiv);
+//     Message.appendChild(UserMessageDiv);
+//     Message.classList.add("message");
+//     Message.classList.add(position);
+//     messageContainer.appendChild(Message);
+// }
+// messageInput.addEventListener("click",()=>{
+//     console.log("working");
+//     appendMessage("Mr-Dey","This is a test function","right");
+//     appendMessage("Mr-Rony","This is a test function2","left");
+// })
+
+>>>>>>> beta
