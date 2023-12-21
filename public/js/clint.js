@@ -1,13 +1,7 @@
 //io from socket server
-<<<<<<< HEAD
-
-const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
-
-=======
 // const socket = io("http://127.0.0.1:3000");
 // const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
 const socket = io("http://192.168.1.41:3000");
->>>>>>> beta
 console.log("live");
 
 //prompt
@@ -40,12 +34,6 @@ const appendMessage=(username,message,position)=>{
     UserNameDiv.classList.add(`name-${position}`);
     UserNameDiv.innerText=username;
 
-<<<<<<< HEAD
-    let UserMessageDiv=document.createElement("div");
-    UserMessageDiv.classList.add("text");
-    UserMessageDiv.innerText=message;
-
-=======
 //Future Work
 //buttonClicked
 // sendButton.addEventListener('click',()=>{
@@ -72,7 +60,6 @@ const appendMessage=(username,message,position)=>{
     UserMessageDiv.classList.add("text");
     UserMessageDiv.innerText=message;
 
->>>>>>> beta
     let Message=document.createElement("div");
     Message.appendChild(UserNameDiv);
     Message.appendChild(UserMessageDiv);
@@ -116,8 +103,6 @@ socket.on("receved-message",data=>{
     messageContainer.scrollTop=messageContainer.scrollHeight;
 })
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -147,4 +132,3 @@ socket.on("receved-message",data=>{
 //     appendMessage("Mr-Rony","This is a test function2","left");
 // })
 
->>>>>>> beta
