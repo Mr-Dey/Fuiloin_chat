@@ -181,17 +181,28 @@ body{
 }
 
 .button{
-    border: .3vh solid rgba(0, 0, 0, 0.466);
+    color: black;
+    border: .2vh solid rgba(0, 0, 0, 0.466);
     display: flex;
     height: 7vh;
     width: 7vh;
     align-items: center;
     justify-content: center;
     border-radius: 5vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.button-clicked{
-    background-color: aquamarine;
-    color: whitesmoke;
+
+@media only screen and (min-width:768px){
+    .button:hover {
+        color: white;
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        transform: scale(1.1);
+    }
+}
+
+.button:active {
+    transform: scale(0.90);
 }
 
 .material-symbols-outlined {
@@ -230,14 +241,24 @@ body{
     backdrop-filter: blur(1.5vh);
 }
 .entrypoint{
-    color: black;
+    color: rgba(0, 0, 0, 0.659);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 3vh;
+    background-color: rgba(127, 255, 212, 0.24);
+    backdrop-filter: blur(5vh);
+    padding: 2vh;
+    gap: 2vh;
+    width: 100%;
+    font-size: 6vh;
 }
 
+#nameInp{
+    width: 50%;
+    text-align: center;
+}
 
 /* mobileview */
 
@@ -245,16 +266,8 @@ body{
 
     /* entryprompt */
     .entrypoint{
-        background-color: rgba(127, 255, 212, 0.24);
-        backdrop-filter: blur(5vh);
-        padding: 2vh;
-        gap: 2vh;
-        width: 100%;
         font-size: 4vh;
-        color: black;
     }
-
-
 
 
     /* body */
@@ -346,6 +359,12 @@ body{
         width: 6vh;
         border: .2vh solid rgba(0, 0, 0, 0.466);
         border-radius: 5vh;
+    }
+
+    .button:active {
+        color: white;
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        transform: scale(0.90);
     }
     .material-symbols-outlined{
         font-size: 3vh !important;

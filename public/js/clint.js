@@ -13,10 +13,12 @@ const loginbtn=document.querySelector("#loginbtn");
 let Name="Default";
 entryForm.addEventListener("submit",(e)=>{
     e.preventDefault();
-    Name=nameInp.value;
-    prompt.style.display="none";
-    //OnNewUserJoined
-    socket.emit("new-user-joined",Name);
+    if(nameInp.value.trim().length>0){
+        Name=nameInp.value;
+        prompt.style.display="none";
+        //OnNewUserJoined
+        socket.emit("new-user-joined",Name);
+    }
 })
 
 //html properties
