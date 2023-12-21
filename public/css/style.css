@@ -72,32 +72,6 @@ body{
     background-color: white;
 }
 
-
-/* maybeinfuture */
-/* .wave {
-    margin-top: 10.5vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-.wave svg {
-    position: relative;
-    display: block;
-    width: calc(121% + 1.3px);
-    height: 3vh;
-}
-
-.wave .shape-fill {
-    fill: #003470;
-} */
-
-
-
-
-
 .container{
     padding: 1vh;
     background-color: rgba(245, 245, 245, 0.514);
