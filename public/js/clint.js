@@ -1,5 +1,6 @@
 //io from socket server
 // const socket = io("http://127.0.0.1:3000");
+// const socket = io("https://fuiloin-chat-supreview.koyeb.app/");
 const socket = io("http://192.168.1.41:3000");
 console.log("live");
 
@@ -71,6 +72,7 @@ form.addEventListener("submit",(e)=>{
 //User joined
 socket.on("user-joined",(Name)=>{
     appendMessage(Name,`${Name} has joined the chat.`,"left");
+    messageContainer.scrollTop=messageContainer.scrollHeight;
 })
 
 //LoadOldMessages
