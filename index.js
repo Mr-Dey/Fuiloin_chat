@@ -17,7 +17,14 @@ const users={};
 
 //messagesStoreHere
 let MessageCount=0;
-const StoreMessages={};
+const oldMessages={};
+const StoreMessages=(name,message)=>{
+  oldMessages[MessageCount]={
+    name:name,
+    message:message
+  };
+  MessageCount++;
+}
 
 //io logic
 io.on("connection",(socket)=>{
@@ -25,16 +32,13 @@ io.on("connection",(socket)=>{
     socket.on("new-user-joined",(name)=>{
       console.log(name+" has joined the chat!");
       users[socket.id]=name;
-      socket.emit("load-messages",StoreMessages);
+      socket.emit("load-messages",oldMessages);
+      StoreMessages(name,`${name} has joined the chat!`);
       socket.broadcast.emit("user-joined",name);
     })
     //Receved-And-sendMessage
     socket.on("send-message",(message)=>{
-      StoreMessages[MessageCount]={
-        name:users[socket.id],
-        message:message
-      }
-      MessageCount++;
+      StoreMessages(users[socket.id],message);
       socket.broadcast.emit("receved-message",{
         name:users[socket.id],
         message:message
