@@ -67,6 +67,16 @@ ul{
     list-style: none;
 }
 
+/* navui */
+.navui{
+    background-color: red;
+    display: flex;
+    max-width: 20%;
+    justify-content: center;
+}
+
+
+
 /* body */
 body{
     background-color: white;
