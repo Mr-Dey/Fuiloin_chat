@@ -1,5 +1,5 @@
-const express = require("express");
-const http=require("http");
+const express = require("express"); //requre for function handelling through http server.
+const http=require("http");// to connect socket io http is needed.
 const app=express();
 const server = http.createServer(app);
 const socketIO = require("socket.io");
